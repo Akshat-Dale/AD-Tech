@@ -20,6 +20,7 @@ public class splashScreen extends AppCompatActivity {
 
         Intent intent = new Intent(splashScreen.this,MainActivity.class);
 
+
         textViewAD.animate().alpha(1).setDuration(3000);
 
         new Handler().postDelayed(new Runnable() {

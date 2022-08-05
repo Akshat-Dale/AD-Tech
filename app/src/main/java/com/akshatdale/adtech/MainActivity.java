@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     public void signUp(View view) {
         startActivity(intentSignup);
 
-      
+
     }
 
     public void login(View view) {
