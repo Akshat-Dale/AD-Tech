@@ -3,11 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/ADTech/app/src/main/res/drawable/custombutton.xml" value="0.142" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/ADTech/app/src/main/res/drawable/customtextview.xml" value="0.142" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/ADTech/app/src/main/res/drawable/roundbutton.xml" value="0.1705" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/ADTech/app/src/main/res/drawable/roundbuttonn.xml" value="0.142" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/ADTech/app/src/main/res/layout/activity_forgot_password.xml" value="0.17760416666666667" />
-        <entry key="..\:/Users/lenovo/AndroidStudioProjects/ADTech/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/ADTech/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/ADTech/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/ADTech/app/src/main/res/layout/activity_splash_screen.xml" value="0.18" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/ADTech/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1205" />
