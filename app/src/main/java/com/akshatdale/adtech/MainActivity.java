@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     TextView textViewNewUser;
     Intent intentSignup;
     Intent  intentForgotPassword;
+
+
 
 
     @Override
@@ -28,9 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void signUp(View view) {
         startActivity(intentSignup);
-
-
-    }
+  }
 
     public void login(View view) {
         Toast.makeText(getApplicationContext(), "Successfuly login", Toast.LENGTH_SHORT).show();
@@ -39,4 +42,8 @@ public class MainActivity extends AppCompatActivity {
     public void forgotPassword(View view) {
         startActivity(intentForgotPassword);
     }
+
+
+
+
 }
