@@ -11,9 +11,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class signUpActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
-    Intent intent;
+
     EditText editTextSignUpName, editTextSignUpEmail,editTextSignUpPassword, editTextSignUpConfirmPassword;
     Button buttonSignup;
     ImageView signUpGoogle, signUpFacebook, signUpTwitter;
@@ -34,13 +34,15 @@ public class signUpActivity extends AppCompatActivity {
         signUpTwitter = findViewById(R.id.signUpTwitter);
         buttonSignup = findViewById(R.id.buttonSignup);
 
-         intent = new Intent(signUpActivity.this,MainActivity.class);
+//        CREATING OUR DATABASE CASE TO ACCESS ALL QUERIES
          databaseHelper = new DatabaseHelper(this);
 
     }
 
 //    IF CLICK ON ALREADY USER
     public void alreadyUserLogin(View view) {
+
+        Intent intent = new Intent(SignUpActivity.this, MainLoginActivity.class);
         startActivity(intent);
     }
 
@@ -67,7 +69,7 @@ public class signUpActivity extends AppCompatActivity {
                 databaseHelper.signUpData(name, email, password);
                 Toast.makeText(getApplicationContext(), "Sign up successful !", Toast.LENGTH_LONG).show();
 
-                Intent intentSignUpSuccess = new Intent(signUpActivity.this, HomeActivity.class);
+                Intent intentSignUpSuccess = new Intent(SignUpActivity.this, HomeActivity.class);
                 startActivity(intentSignUpSuccess);
             }
             else {

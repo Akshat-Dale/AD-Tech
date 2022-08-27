@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splashgradiant"
-    tools:context=".splashScreen">
+    tools:context=".SplashScreen">
 
 <!--    <TextView-->
 <!--        android:id="@+id/textViewAD"-->

@@ -6,9 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-public class splashScreen extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
 
 //    TextView textViewAD;
     ImageView imageViewlogo;
@@ -24,7 +23,7 @@ public class splashScreen extends AppCompatActivity {
         imageViewlogo.setAlpha(0f);
 
 
-        Intent intent = new Intent(splashScreen.this,MainActivity.class);
+        Intent intent = new Intent(SplashScreen.this, MainLoginActivity.class);
 
 
 //        textViewAD.animate().alpha(1).setDuration(3000);

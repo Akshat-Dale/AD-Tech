@@ -2,6 +2,7 @@ package com.akshatdale.adtech;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -39,6 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
+//    ADDING DATA
     public void signUpData(String name,String email ,String password){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
@@ -50,4 +52,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.insert(TABLE_NAME,null,values);
 
     }
+
+//    FETCHING DATA
+    public ArrayList<UserDetails> fetchData(){
+
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME,null);
+        ArrayList<UserDetails> userDetailsArrayList = new ArrayList<>();
+
+//        MOVING CURSOR AND GET DATA
+        while (cursor.moveToNext()){
+            UserDetails userDetails = new UserDetails();
+            userDetails.name = cursor.getString(1);
+            userDetails.email = cursor.getString(2);
+            userDetails.password = cursor.getString(3);
+
+            userDetailsArrayList.add(userDetails);
+        }
+        return  userDetailsArrayList;
+    }
+
+//    UPDATE DATA
+    public void forgotPasswordData(UserDetails userDetails){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_PASSWORD,userDetails.password);
+        sqLiteDatabase.update(TABLE_NAME,values,COLUMN_NAME + "=?" +
+                COLUMN_EMAIL + "=?",new String[]{userDetails.name,userDetails.email});
+    }
+
+
 }
