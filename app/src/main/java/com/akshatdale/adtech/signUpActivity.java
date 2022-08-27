@@ -48,22 +48,31 @@ public class signUpActivity extends AppCompatActivity {
 //    ADDING DATA IN DATABASE WHILE ADDING DETAILS AND CLICK ON SIGNUP BUTTON
 
 
-    public void signUp(View view){
+    public void signUpButtonClicked(View view){
         String name = editTextSignUpName.getText().toString();
         String email = editTextSignUpEmail.getText().toString();
         String password = editTextSignUpPassword.getText().toString();
         String confirmPassword = editTextSignUpConfirmPassword.getText().toString();
 
-        if (password.equals(confirmPassword)){
+//        CHECK ALL FIELDS ALL FIELD OR NOT
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "fill all fields..!", Toast.LENGTH_LONG).show();
 
-            Log.i("SIGNUP DATA","name: " +name+" email: "+email);
-            databaseHelper.signUpData(name,email,password);
-            Toast.makeText(getApplicationContext(), "Sign up successful !", Toast.LENGTH_LONG).show();
         }
-        else{
-            Toast.makeText(getApplicationContext(),"Password Incorrect",Toast.LENGTH_LONG).show();
+        else {
+//            CONFIRM PASSWORD
+            if (password.equals(confirmPassword)) {
+
+                Log.i("SIGNUP DATA", "name: " + name + " email: " + email);
+                databaseHelper.signUpData(name, email, password);
+                Toast.makeText(getApplicationContext(), "Sign up successful !", Toast.LENGTH_LONG).show();
+
+                Intent intentSignUpSuccess = new Intent(signUpActivity.this, HomeActivity.class);
+                startActivity(intentSignUpSuccess);
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Password Incorrect", Toast.LENGTH_LONG).show();
+            }
         }
     }
-
-
 }
