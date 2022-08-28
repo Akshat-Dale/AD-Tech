@@ -50,11 +50,12 @@ public class MainLoginActivity extends AppCompatActivity {
         startActivity(intentForgotPassword);
     }
 
-//    DATA IS FETCHED FROM DATABASE IN BELOW ARRAYLIST ||||| USE LOOP AND CHECK ALL DATA IN DATABASE
 
 
-    //    CLICKING LOGIN BUTTON THEN CHECK USER EMAIL AND PASSWORD IN DATA
+    //    CLICKING LOGIN BUTTON THEN CHECK USER EMAIL AND PASSWORD IN DATABASE
     public void loginButtonClicked(View view){
+
+        //    DATA IS FETCHED FROM DATABASE IN BELOW ARRAYLIST ||||| USE LOOP AND CHECK ALL DATA IN DATABASE
         ArrayList<UserDetails> checkDataArrayList = databaseHelper.fetchData();
 
         String email = editTextLoginEmail.getText().toString();
@@ -64,7 +65,9 @@ public class MainLoginActivity extends AppCompatActivity {
 
         for (int i = 0; i < checkDataArrayList.size(); i++) {
             if (email.equals(checkDataArrayList.get(i).email) && password.equals(checkDataArrayList.get(i).password)){
+//                IF ENTERED LOGIN AND PASSWORD ARE STORE IN DATABASE ALREADU USER LOGIN SUCCESSFULL
                 Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_LONG).show();
+
                 Intent intentLoginSuccess = new Intent(MainLoginActivity.this, HomeActivity.class);
                 startActivity(intentLoginSuccess);
                 Log.i("LoginData",checkDataArrayList.get(i).email);

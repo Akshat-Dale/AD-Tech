@@ -73,7 +73,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return  userDetailsArrayList;
     }
 
-//    UPDATE DATA
+//    UPDATE DATA IN DATABASE
     public void forgotPasswordData(UserDetails userDetails){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
@@ -82,5 +82,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.update(TABLE_NAME,values,COLUMN_EMAIL + "=?" ,new String[]{userDetails.email});
     }
 
+//    DELETE DATA FROM DATABASE
+
+    public void deleteData(UserDetails userDetails){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.delete(TABLE_NAME,COLUMN_EMAIL + "=?" + COLUMN_PASSWORD + "=?"
+                ,new String[]{userDetails.email,userDetails.password});
+    }
 
 }

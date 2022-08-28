@@ -65,6 +65,7 @@ public class SignUpActivity extends AppCompatActivity {
 //            CONFIRM PASSWORD
             if (password.equals(confirmPassword)) {
 
+//                ADDING DATA IN DATABASE
                 Log.i("SIGNUP DATA", "name: " + name + " email: " + email);
                 databaseHelper.signUpData(name, email, password);
                 Toast.makeText(getApplicationContext(), "Sign up successful !", Toast.LENGTH_LONG).show();
