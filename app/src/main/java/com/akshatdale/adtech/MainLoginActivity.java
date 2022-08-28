@@ -65,7 +65,10 @@ public class MainLoginActivity extends AppCompatActivity {
         for (int i = 0; i < checkDataArrayList.size(); i++) {
             if (email.equals(checkDataArrayList.get(i).email) && password.equals(checkDataArrayList.get(i).password)){
                 Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_LONG).show();
+                Intent intentLoginSuccess = new Intent(MainLoginActivity.this, HomeActivity.class);
+                startActivity(intentLoginSuccess);
                 Log.i("LoginData",checkDataArrayList.get(i).email);
+
             }
             else if (email != checkDataArrayList.get(i).email || password != checkDataArrayList.get(i).password){
                 Toast.makeText(getApplicationContext(),"Incorrect email or password!",Toast.LENGTH_LONG).show();

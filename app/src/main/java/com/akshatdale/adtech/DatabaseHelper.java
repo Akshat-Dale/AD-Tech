@@ -79,8 +79,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_PASSWORD,userDetails.password);
-        sqLiteDatabase.update(TABLE_NAME,values,COLUMN_NAME + "=?" +
-                COLUMN_EMAIL + "=?",new String[]{userDetails.name,userDetails.email});
+        sqLiteDatabase.update(TABLE_NAME,values,COLUMN_EMAIL + "=?" ,new String[]{userDetails.email});
     }
 
 
