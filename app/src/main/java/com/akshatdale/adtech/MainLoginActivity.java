@@ -48,6 +48,8 @@ public class MainLoginActivity extends AppCompatActivity {
     public void forgotPasswordText(View view) {
         Intent intentForgotPassword = new Intent(MainLoginActivity.this, ForgotPasswordActivity.class);
         startActivity(intentForgotPassword);
+
+
     }
 
 
