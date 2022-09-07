@@ -73,12 +73,9 @@ public class MainLoginActivity extends AppCompatActivity {
                 Log.i("LoginData",checkDataArrayList.get(i).email);
 
             }
-            else if (email != checkDataArrayList.get(i).email || password != checkDataArrayList.get(i).password){
-                Toast.makeText(getApplicationContext(),"Incorrect email or password!",Toast.LENGTH_LONG).show();
-            }
-            else {
-                Toast.makeText(getApplicationContext(),"Create account",Toast.LENGTH_LONG).show();
-            }
+//            else {
+//                Toast.makeText(getApplicationContext(),"Incorrect email or password!",Toast.LENGTH_LONG).show();
+//            }
         }
     }
 
